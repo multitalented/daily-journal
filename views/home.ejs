@@ -1,0 +1,25 @@
+<%- include("partials/header"); -%>
+
+<h1>Home</h1>
+
+<p> <%= homePageContent %> </p>
+
+<% allPosts.forEach(function(post){ %>
+<h2> <a href="/posts/<%=post.title%>"> <%= post.title %> </a></h2>
+<!-- <p> <%= post.content.substring(0,100) + "..."  %> -->
+<p class="previewText"> <%= post.content %>
+</p>
+<a href="/posts/<%=post.title%>">Read More </a>
+
+<% }); %>
+
+<%- include("partials/footer"); -%>
+
+
+
+
+
+<!-- <a href="/posts/" + _.kebabCase(post.title) >Read More </a></p> -->
+<%# new way of doing a for loop in javascript (forEach) %>
+<%# allPosts.forEach(function(post){  console.log(post);}); %>
+<%# for(var i = 0; i < allPosts.length; i++) { %>
